@@ -1,10 +1,12 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/chayelheinsen/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="pygmalion"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -49,60 +51,38 @@ ZSH_THEME="pygmalion"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew bundler gem ruby rvm sudo)
-
-# User configuration
-
-# export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-# export MANPATH="/usr/local/man:$MANPATH"
-export PATH=$PATH:/usr/local/m-cli
-export GOPATH=$HOME/go
-export PATH="$GOPATH/bin:$PATH"
-export PATH="$PATH:/usr/local/opt/go/libexec/bin"
-export PGDATA=/usr/local/var/postgres
-export PATH="$HOME/.fastlane/bin:$PATH"
+plugins=(git brew bundler gem ruby rails rvm sudo docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# User configuration
+export PATH=$PATH:/usr/local/m-cli
+export GOPATH=$HOME/Go
+export PATH="$GOPATH/bin:$PATH"
+export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+export PATH="$HOME/.fastlane/bin:$PATH"
+export EDITOR="vim"
 
 # Alias
-
 alias cdev="cd ~/Developer"
+alias cdios="cdev && cd iOS"
 alias afk="pmset sleepnow"
 alias buuc="brew update && brew upgrade && brew cleanup"
+alias rshell="echo 'Reloading...' && . ~/.zshrc && clear"
 alias reload=". ~/.zshrc"
+alias gac="git add . && git commit -m"
+alias gdh="git diff --color | diff-so-fancy"
+alias gbl="gb | cat"
+alias gblr="gb -r | cat"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-fpath=(/usr/local/share/zsh-completions $fpath)
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH=$PATH:/usr/local/Cellar/openvpn/2.4.3/sbin
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home 
-
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi

@@ -65,6 +65,7 @@ export PATH="$HOME/.fastlane/bin:$PATH"
 export EDITOR="vim"
 
 # Alias
+alias zshrc="$EDITOR ~/.zshrc"
 alias cdev="cd ~/Developer"
 alias cdios="cdev && cd iOS"
 alias cdruby="cdev && cd Ruby"

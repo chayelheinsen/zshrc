@@ -56,6 +56,7 @@ plugins=(git brew bundler gem ruby rails rvm sudo docker-compose)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
 export PATH=$PATH:/usr/local/m-cli
 export GOPATH=$HOME/Go
 export PATH="$GOPATH/bin:$PATH"
@@ -66,6 +67,9 @@ export EDITOR="vim"
 # Alias
 alias cdev="cd ~/Developer"
 alias cdios="cdev && cd iOS"
+alias cdruby="cdev && cd Ruby"
+alias copyzshrc="cat ~/.zshrc | pbcopy"
+alias s="spotify"
 alias afk="pmset sleepnow"
 alias buuc="brew update && brew upgrade && brew cleanup"
 alias rshell="echo 'Reloading...' && . ~/.zshrc && clear"

@@ -7,7 +7,7 @@ export ZSH=/Users/chayelheinsen/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="pygmalion"
+ZSH_THEME="pygmalion-custom"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -79,6 +79,8 @@ alias gac="git add . && git commit -m"
 alias gdh="git diff --color | diff-so-fancy"
 alias gbl="gb | cat"
 alias gblr="gb -r | cat"
+alias https="http --default-scheme=https"
+alias aws_vn="aws --profile vn"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 

@@ -83,6 +83,15 @@ alias gdb="git branch -d"
 alias https="http --default-scheme=https"
 alias aws_vn="aws --profile vn"
 
+function update_zshrc() {
+  CURRENT_DIR=$PWD
+  
+  wd dev zshrc
+  git pull
+  cp zshrc ~/.zshrc
+  wd ..
+}
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export NVM_DIR="$HOME/.nvm"

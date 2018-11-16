@@ -88,7 +88,7 @@ function update_zshrc() {
   git pull
   cp zshrc ~/.zshrc
   wd ..
-  rshell
+  reload
 }
 
 function save_zshrc() {
@@ -105,7 +105,7 @@ function update_warprc() {
   git pull
   cp warprc ~/.warprc
   wd ..
-  rshell
+  reload
 }
 
 function save_warprc() {

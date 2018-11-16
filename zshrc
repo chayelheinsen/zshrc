@@ -84,8 +84,6 @@ alias https="http --default-scheme=https"
 alias aws_vn="aws --profile vn"
 
 function update_zshrc() {
-  CURRENT_DIR=$PWD
-  
   wd dev zshrc
   git pull
   cp zshrc ~/.zshrc
@@ -98,6 +96,23 @@ function save_zshrc() {
   git pull
   cp ~/.zshrc zshrc
   gac "Update zshrc"
+  gp
+  wd ..
+}
+
+function update_warprc() {
+  wd dev zshrc
+  git pull
+  cp warprc ~/.warprc
+  wd ..
+  rshell
+}
+
+function save_warprc() {
+  wd dev zshrc
+  git pull
+  cp ~/.warprc warprc
+  gac "Update warpc"
   gp
   wd ..
 }

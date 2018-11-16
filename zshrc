@@ -90,6 +90,7 @@ function update_zshrc() {
   git pull
   cp zshrc ~/.zshrc
   wd ..
+  rshell
 }
 
 function save_zshrc() {

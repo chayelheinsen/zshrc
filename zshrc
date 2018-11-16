@@ -92,6 +92,15 @@ function update_zshrc() {
   wd ..
 }
 
+function save_zshrc() {
+  wd dev zshrc
+  git pull
+  cp ~/.zshrc zshrc
+  gac "Update zshrc"
+  gp
+  wd ..
+}
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export NVM_DIR="$HOME/.nvm"

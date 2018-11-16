@@ -79,6 +79,7 @@ alias gac="git add . && git commit -m"
 alias gdh="git diff --color | diff-so-fancy"
 alias gbl="gb | cat"
 alias gblr="gb -r | cat"
+alias gdb="git branch -d"
 alias https="http --default-scheme=https"
 alias aws_vn="aws --profile vn"
 

@@ -82,6 +82,7 @@ alias gblr="gb -r | cat"
 alias gdb="git branch -d"
 alias https="http --default-scheme=https"
 alias aws_vn="aws --profile vn"
+alias ss="open -a ScreenSaverEngine"
 
 function update_zshrc() {
   wd dev zshrc

@@ -83,7 +83,7 @@ alias gdb="git branch -d"
 alias https="http --default-scheme=https"
 alias aws_vn="aws --profile vn"
 alias ss="open -a ScreenSaverEngine"
-alias drw="dco run web --rm"
+alias drw="dco run --rm web"
 
 function update_zshrc() {
   wd dev zshrc

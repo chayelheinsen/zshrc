@@ -84,6 +84,7 @@ alias https="http --default-scheme=https"
 alias aws_vn="aws --profile vn"
 alias ss="open -a ScreenSaverEngine"
 alias drw="docker-compose run --rm web"
+alias drr="drw rspec && drw rubocop"
 
 function update_zshrc() {
   wd dev zshrc

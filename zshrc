@@ -51,7 +51,7 @@ ZSH_THEME="pygmalion-custom"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(wd git brew bundler gem ruby rails rvm sudo docker-compose)
+plugins=(wd git brew bundler gem ruby rails sudo docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -85,6 +85,7 @@ alias aws_vn="aws --profile vn"
 alias ss="open -a ScreenSaverEngine"
 alias drw="docker-compose run --rm web"
 alias drr="drw rspec && drw rubocop"
+alias ng="ngrok http --subdomain=chayelheinsen"
 
 function update_zshrc() {
   wd dev zshrc

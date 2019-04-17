@@ -51,7 +51,7 @@ ZSH_THEME="pygmalion-custom"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(wd git brew bundler gem ruby rails sudo docker-compose)
+plugins=(wd git brew bundler gem ruby rails rvm sudo docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -120,9 +120,6 @@ function save_warprc() {
   wd ..
 }
 
-export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/lib
-export CPATH=$CPATH:/usr/local/include
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -133,4 +130,10 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-eval "$(rbenv init -)"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH="$HOME/.fastlane/bin:$PATH"
+
+# added by travis gem
+[ -f /Users/chayelheinsen/.travis/travis.sh ] && source /Users/chayelheinsen/.travis/travis.sh

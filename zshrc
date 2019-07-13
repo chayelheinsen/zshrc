@@ -86,6 +86,15 @@ alias ss="open -a ScreenSaverEngine"
 alias drw="docker-compose run --rm web"
 alias drr="drw rspec && drw rubocop"
 
+function start_tunnel() {
+  subdomain=${1:-chayel}
+  port=${2:-3000}
+  
+  echo "Tunneling to localhost:$port"  
+
+  ssh -R $subdomain:80:localhost:$port serveo.net
+}
+
 function update_zshrc() {
   wd dev zshrc
   git pull
@@ -131,9 +140,13 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 export PATH="$HOME/.fastlane/bin:$PATH"
 
 # added by travis gem
 [ -f /Users/chayelheinsen/.travis/travis.sh ] && source /Users/chayelheinsen/.travis/travis.sh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

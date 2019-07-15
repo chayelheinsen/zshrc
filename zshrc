@@ -89,10 +89,10 @@ alias drr="drw rspec && drw rubocop"
 function start_tunnel() {
   subdomain=${1:-chayel}
   port=${2:-3000}
-  
+ 
   echo "Tunneling to localhost:$port"  
 
-  ssh -R $subdomain:80:localhost:$port serveo.net
+  ssh -o ServerAliveInterval=60 -R $subdomain:80:localhost:$port serveo.net
 }
 
 function update_zshrc() {
